@@ -3,7 +3,7 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body {% if page.path == "index.md" %} id="homepage" {% endif %}>
 
     {%- include header.html -%}
 

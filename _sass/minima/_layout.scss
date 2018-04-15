@@ -4,11 +4,18 @@
 .site-header {
   margin-top: $spacing-unit;
   width: 100%;
-  position: absolute;
 
+  #homepage & {
+    position: absolute;
+  }
+  
   @include media-query($on-laptop) {
     margin-top: $spacing-unit / 2;
     position: relative;
+
+    #homepage & {
+      position: relative;
+    }
   }
 }
 
@@ -62,65 +69,10 @@
 }
 
 .footer-heading {
-  @include relative-font-size(1.125);
+  @include relative-font-size(1);
   margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
   color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-  @extend %clearfix;
 }
-
-.footer-col {
-  float: left;
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
 
 
 /**
@@ -131,21 +83,9 @@
   flex: 1;
 }
 
-.page-heading {
-  @include relative-font-size(2);
-}
-
-.post-list-heading {
-  @include relative-font-size(1.75);
-}
-
 .post-list {
   margin-left: 0;
   list-style: none;
-
-  > li {
-    margin-bottom: $spacing-unit;
-  }
 }
 
 .post-meta {
@@ -155,7 +95,6 @@
 
 .post-link {
   display: block;
-  @include relative-font-size(1.5);
 }
 
 
@@ -164,16 +103,18 @@
  * Social
  */
 .social-media-sentence {
-  > span {
-    display: inline-block;
+  a {
+    white-space: nowrap;
+  }
 
+  > span {
     &::after {
       content: ",";
     }
 
     &:last-child {
       &::before {
-        content: " and ";
+        content: "and ";
       }
 
       &::after {
@@ -188,7 +129,8 @@
  * Home
  */
 .home-content {
-  max-width: #{$content-width};
+  margin-bottom: $spacing-unit;
+  max-width: #{$home-content-width};
   width: -webkit-calc(100% - (#{$spacing-unit}));
   width:         calc(100% - (#{$spacing-unit}));
 }
