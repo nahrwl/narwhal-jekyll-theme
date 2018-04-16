@@ -2,7 +2,7 @@
 
 # narwhal-jekyll-theme
 
-Narwhal is a simple Jekyll theme for a portfolio website. This theme is a fork of [Minima](https://github.com/jekyll/minima), the default Jekyll theme. Much of this Readme is still identical to Minima's, but all sections have been updated to support Narwhal.
+Narwhal is a radically simple Jekyll theme for a portfolio website. This theme is a fork of [Minima](https://github.com/jekyll/minima), the default Jekyll theme. Much of this Readme is still identical to Minima's, but all sections have been updated to support Narwhal.
 
 [Preview this theme](http://nahrwl.me/narwhal-jekyll-theme/)
 
@@ -94,8 +94,6 @@ To edit the biography paragraph at the top of the landing page(s), refer to the 
 
 The title for the posts list is `Posts` by default and rendered with an `<h2>` tag. You can customize this heading by defining a `list_title` variable in the document's front matter.
 
---
-
 ### Adding Portfolio Items
 
 Add new portfolio items by adding files to the `_portfolio` folder. This is the folder for the portfolio collection, as defined in `_config.yml`.
@@ -108,8 +106,6 @@ The front matter for a portfolio item is as follows:
   - `title` Title of the project, which appears on the portfolio home page.
   - `image` URL for the splash image for the project, which appears on the portfolio home page.
   - `importance` An integer. Portfolio items with a higher `importance` number will appear earlier on the portfolio home page. Use this to bump portfolio items to the top of the list.
-
---
 
 ### Customization
 
@@ -130,13 +126,9 @@ The site's default CSS has now moved to a new place within the gem itself, [`ass
   - Copy the `assets/` folder from there into the root of `<your-site>`
   - Change whatever values you want, inside `<your-site>/assets/main.scss`
 
---
-
 ### Customize navigation links
 
 Right now, customizing the navigation links in the navigation bar is not supported.
-
---
 
 ### Change default date format
 
@@ -149,8 +141,6 @@ in `_config.yml`.
 narwhal:
   date_format: "%b %-d, %Y"
 ```
-
---
 
 ### Enabling comments (via Disqus)
 
@@ -168,8 +158,6 @@ You can find out more about Disqus' shortnames [here](https://help.disqus.com/cu
 Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
 
 If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
-
---
 
 ### Social networks
 
@@ -195,8 +183,6 @@ mastodon:
    instance: example.com
 ```
 
---
-
 ### Enabling Google Analytics
 
 To enable Google Analytics, add the following lines to your Jekyll site:
@@ -206,8 +192,6 @@ To enable Google Analytics, add the following lines to your Jekyll site:
 ```
 
 Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
-
---
 
 ### Enabling Excerpts in the Posts List
 
