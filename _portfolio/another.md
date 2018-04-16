@@ -14,4 +14,4 @@ Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit maur
 
 ## Here's an image!
 
-![minima theme preview](/screenshot.png)
+![narwhal theme preview](/screenshot.png)

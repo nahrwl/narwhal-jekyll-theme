@@ -1,5 +1,7 @@
 ## 0.1.0
 
+ * Introduces new Narwhal theme layout
+
 ## Forked at this point
 
 ## 2.4.1

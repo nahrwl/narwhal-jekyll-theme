@@ -1,23 +1,23 @@
-# minima
+# narwhal-jekyll-theme
 
-*Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.
+Narwhal is a simple Jekyll theme for a portfolio website. This theme is a fork of [Minima](https://github.com/jekyll/minima), the default Jekyll theme. Much of this Readme is still identical to Minima's, but all sections have been updated to support Narwhal.
 
-[Theme preview](https://jekyll.github.io/minima/)
+[Preview this theme](http://nahrwl.me/narwhal-jekyll-theme/)
 
-![minima theme preview](/screenshot.png)
+![narwhal theme preview](/screenshot.png)
 
 ## Installation
 
 Add this line to your Jekyll site's Gemfile:
 
 ```ruby
-gem "minima"
+gem "narwhal-jekyll-theme"
 ```
 
 And add this line to your Jekyll site:
 
 ```yaml
-theme: minima
+theme: narwhal-jekyll-theme
 ```
 
 And then execute:
@@ -27,16 +27,19 @@ And then execute:
 
 ## Contents At-A-Glance
 
-Minima has been scaffolded by the `jekyll new-theme` command and therefore has all the necessary files and directories to have a new Jekyll site up and running with zero-configuration.
+Narwhal has been scaffolded by the `jekyll new-theme` command and therefore has all the necessary files and directories to have a new Jekyll site up and running with zero-configuration.
 
 ### Layouts
 
 Refers to files within the `_layouts` directory, that define the markup for your theme.
 
   - `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
-  - `home.html` &mdash; The layout for your landing-page / home-page / index-page. [[More Info.](#home-layout)]
+  - `home.html` &mdash; The layout for the landing page. Use `portfolio.html` or `post-list.html` for the portfolio landing page and the posts landing page, respectively.
   - `page.html` &mdash; The layout for your documents that contain FrontMatter, but are not posts.
+  - `portfolio.html` &mdash; The layout for the portfolio. Renders the list of portfolio items from the `_portfolio` folder. *Add new portfolio items by adding files to the `_portfolio` folder!*
+  - `portfolio-page.html` &mdash; The layout for an individual portfolio item.
   - `post.html` &mdash; The layout for your posts.
+  - `post-list.html` &mdash; The layout for the blog posts page.
 
 ### Includes
 
@@ -47,15 +50,16 @@ Refers to snippets of code within the `_includes` directory that can be inserted
   - `google-analytics.html` &mdash; Inserts Google Analytics module (active only in production environment).
   - `head.html` &mdash; Code-block that defines the `<head></head>` in *default* layout.
   - `header.html` &mdash; Defines the site's main header section. By default, pages with a defined `title` attribute will have links displayed here.
+  - `post-list.html` &mdash; List of all posts.
 
 ### Sass
 
 Refers to `.scss` files within the `_sass` directory that define the theme's styles.
 
-  - `minima.scss` &mdash; The core file imported by preprocessed `main.scss`, it defines the variable defaults for the theme and also further imports sass partials to supplement itself.
-  - `minima/_base.scss` &mdash; Resets and defines base styles for various HTML elements.
-  - `minima/_layout.scss` &mdash; Defines the visual style for various layouts.
-  - `minima/_syntax-highlighting.scss` &mdash; Defines the styles for syntax-highlighting.
+  - `narwhal.scss` &mdash; The core file imported by preprocessed `main.scss`, it defines the variable defaults for the theme and also further imports sass partials to supplement itself.
+  - `narwhal/_base.scss` &mdash; Resets and defines base styles for various HTML elements.
+  - `narwhal/_layout.scss` &mdash; Defines the visual style for various layouts.
+  - `narwhal/_syntax-highlighting.scss` &mdash; Defines the styles for syntax-highlighting.
 
 ### Assets
 
@@ -66,45 +70,55 @@ This directory can include sub-directories to manage assets of similar type, and
 
 ### Plugins
 
-Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+Narwhal comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
 
 ## Usage
 
 ### Home Layout
 
-`home.html` is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
+`home.html` is a flexible and abstract HTML layout for the site's landing-page. Use `portfolio.html` for the Portfolio landing page and `post-list.html` for the blog / posts page.
 
-#### Main Heading and Content-injection
+#### Biography on a Home Page
 
-From Minima v2.2 onwards, the *home* layout will inject all content from your `index.md` / `index.html` **before** the **`Posts`** heading. This will allow you to include non-posts related content to be published on the landing page under a dedicated heading. *We recommended that you title this section with a Heading2 (`##`)*.
-
-Usually the `site.title` itself would suffice as the implicit 'main-title' for a landing-page. But, if your landing-page would like a heading to be explicitly displayed, then simply define a `title` variable in the document's front matter and it will be rendered with an `<h1>` tag.
+To edit the biography paragraph at the top of the landing page(s), refer to the `biography` property in `_config.yml`.
 
 #### Post Listing
 
-This section is optional from Minima v2.2 onwards.<br/>
-It will be automatically included only when your site contains one or more valid posts or drafts (if the site is configured to `show_drafts`).
+The title for the posts list is `Posts` by default and rendered with an `<h2>` tag. You can customize this heading by defining a `list_title` variable in the document's front matter.
 
-The title for this section is `Posts` by default and rendered with an `<h2>` tag. You can customize this heading by defining a `list_title` variable in the document's front matter.
+--
+
+### Adding Portfolio Items
+
+Add new portfolio items by adding files to the `_portfolio` folder. This is the folder for the portfolio collection, as defined in `_config.yml`.
+
+#### Portfolio Item Front Matter
+
+The front matter for a portfolio item is as follows:
+
+  - `layout` defines the Jekyll layout template. Use `portfolio-page`.
+  - `title` Title of the project, which appears on the portfolio home page.
+  - `image` URL for the splash image for the project, which appears on the portfolio home page.
+  - `importance` An integer. Portfolio items with a higher `importance` number will appear earlier on the portfolio home page. Use this to bump portfolio items to the top of the list.
 
 --
 
 ### Customization
 
-To override the default structure and style of minima, simply create the concerned directory at the root of your site, copy the file you wish to customize to that directory, and then edit the file.
-e.g., to override the [`_includes/head.html `](_includes/head.html) file to specify a custom style path, create an `_includes` directory, copy `_includes/head.html` from minima gem folder to `<yoursite>/_includes` and start editing that file.
+To override the default structure and style of Narwhal, simply create the concerned directory at the root of your site, copy the file you wish to customize to that directory, and then edit the file.
+e.g., to override the [`_includes/head.html `](_includes/head.html) file to specify a custom style path, create an `_includes` directory, copy `_includes/head.html` from narwhal gem folder to `<yoursite>/_includes` and start editing that file.
 
 The site's default CSS has now moved to a new place within the gem itself, [`assets/main.scss`](assets/main.scss). To **override the default CSS**, the file has to exist at your site source. Do either of the following:
 - Create a new instance of `main.scss` at site source.
   - Create a new file `main.scss` at `<your-site>/assets/`
   - Add the frontmatter dashes, and
-  - Add `@import "minima";`, to `<your-site>/assets/main.scss`
+  - Add `@import "narwhal";`, to `<your-site>/assets/main.scss`
   - Add your custom CSS.
 - Download the file from this repo
   - Create  a new file `main.scss` at `<your-site>/assets/`
   - Copy the contents at [assets/main.scss](assets/main.scss) onto the `main.scss` you just created, and edit away!
-- Copy directly from Minima 2.0 gem
-  - Go to your local minima gem installation directory ( run `bundle show minima` to get the path to it ).
+- Copy directly from Narwhal 2.0 gem
+  - Go to your local Narwhal gem installation directory ( run `bundle show narwhal-jekyll-theme` to get the path to it ).
   - Copy the `assets/` folder from there into the root of `<your-site>`
   - Change whatever values you want, inside `<your-site>/assets/main.scss`
 
@@ -112,27 +126,19 @@ The site's default CSS has now moved to a new place within the gem itself, [`ass
 
 ### Customize navigation links
 
-This allows you to set which pages you want to appear in the navigation area and configure order of the links.
-
-For instance, to only link to the `about` and the `portfolio` page, add the following to you `_config.yml`:
-
-```yaml
-header_pages:
-  - about.md
-  - portfolio.md
-```
+Right now, customizing the navigation links in the navigation bar is not supported.
 
 --
 
 ### Change default date format
 
-You can change the default date format by specifying `site.minima.date_format`
+You can change the default date format by specifying `site.narwhal.date_format`
 in `_config.yml`.
 
 ```
-# Minima date format
+# Narwhal date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
+narwhal:
   date_format: "%b %-d, %Y"
 ```
 
@@ -195,9 +201,9 @@ Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
 
 --
 
-### Enabling Excerpts on the Home Page
+### Enabling Excerpts in the Posts List
 
-To display post-excerpts on the Home Page, simply add the following to your `_config.yml`:
+To display post-excerpts on posts.html and wherever else posts-list.html is included, simply add the following to your `_config.yml`:
 
 ```yaml
 show_excerpts: true
@@ -205,7 +211,7 @@ show_excerpts: true
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jekyll/minima. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nahrwl/narwhal-jekyll-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 

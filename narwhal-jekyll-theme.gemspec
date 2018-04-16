@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "narwhal-theme"
+  spec.name          = "narwhal-jekyll-theme"
   spec.version       = "0.1.0"
   spec.authors       = ["Nathan Wallace"]
   spec.email         = ["nathan@nahrwl.me"]
 
   spec.summary       = "A simple portfolio theme for Jekyll."
-  spec.homepage      = "https://github.com/nahrwl/narwhal-theme"
+  spec.homepage      = "https://github.com/nahrwl/narwhal-jekyll-theme"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"

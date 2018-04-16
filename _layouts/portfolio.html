@@ -6,7 +6,7 @@ layout: home
   {% assign sorted = site.portfolio | sort: 'importance' | reverse %}
   {% for item in sorted %}
       <div class="portfolio-item">
-        <a href="{{ item.url }}">
+        <a href="{{ item.url | relative_url }}">
           <div class="portfolio-img-wrapper">
             <img src="{{ site.base_url }}{{ item.image }}">
           </div>
