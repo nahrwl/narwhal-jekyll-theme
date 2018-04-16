@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "narwhal-theme"
-  spec.version       = "1.0.0"
-  spec.authors       = ["Joel Glovier"]
-  spec.email         = ["jglovier@github.com"]
+  spec.version       = "0.1.0"
+  spec.authors       = ["Nathan Wallace"]
+  spec.email         = ["nathan@nahrwl.me"]
 
   spec.summary       = "A simple portfolio theme for Jekyll."
-  spec.homepage      = "https://github.com/jekyll/minima"
+  spec.homepage      = "https://github.com/nahrwl/narwhal-theme"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"

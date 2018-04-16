@@ -8,10 +8,10 @@ layout: default
   {%- endif -%}
 
   <div class="home-content">
-    {{ content }}
+    <p>{{- site.biography | escape -}}</p>
     {%- include social.html -%}
   </div>
 
-  {%- include post-list.html -%}
+  {{ content }}
 
 </div>

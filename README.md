@@ -213,6 +213,12 @@ To set up your environment to develop this theme, run `script/bootstrap`.
 
 To test your theme, run `script/server` (or `bundle exec jekyll serve`) and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme and the contents. As you make modifications, your site will regenerate and you should see the changes in the browser after a refresh.
 
+## Credits
+
+Images used in the demo site are by [JESHOOTS.COM](https://unsplash.com/photos/pUAM5hPaCRI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText), [Markus Spiske](https://unsplash.com/photos/HDMqSQxjNBE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText),
+[William Iven](https://unsplash.com/photos/gcsNOsPEXfs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText),
+[Hal Gatewood](https://unsplash.com/photos/tZc3vjPCk-Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) from [Unsplash](https://unsplash.com/collections/1967508/ux-design?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
