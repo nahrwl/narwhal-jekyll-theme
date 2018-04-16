@@ -2,16 +2,18 @@
 layout: home
 ---
 
-<div class="portfolio-grid">
-  {% assign sorted = site.portfolio | sort: 'importance' | reverse %}
-  {% for item in sorted %}
-      <div class="portfolio-item">
-        <a href="{{ item.url | relative_url }}">
-          <div class="portfolio-img-wrapper">
-            <img src="{{ site.base_url }}{{ item.image }}">
-          </div>
-          <h3>{{ item.title }}</h3>
-        </a>
-      </div>
-  {% endfor %}
-</div>
+{%- if site.portfolio.size > 0 -%}
+  <div class="portfolio-grid">
+    {% assign sorted = site.portfolio | sort: 'importance' | reverse %}
+    {% for item in sorted %}
+        <div class="portfolio-item">
+          <a href="{{ item.url | relative_url }}">
+            <div class="portfolio-img-wrapper">
+              <img src="{{ site.base_url }}{{ item.image }}">
+            </div>
+            <h3>{{ item.title }}</h3>
+          </a>
+        </div>
+    {% endfor %}
+  </div>
+{%- endif -%}
