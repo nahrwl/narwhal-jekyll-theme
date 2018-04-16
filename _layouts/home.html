@@ -8,7 +8,9 @@ layout: default
   {%- endif -%}
 
   <div class="home-content">
-    <p>{{- site.biography | escape -}}</p>
+    {%- if site.biography -%}
+      <p>{{- site.biography | escape -}}</p>
+    {%- endif -%}
     {%- include social.html -%}
   </div>
 
