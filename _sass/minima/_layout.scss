@@ -35,14 +35,6 @@
 .site-nav {
   float: right;
 
-  .nav-trigger {
-      display: none;
-  }
-
-  .menu-icon {
-    display: none;
-  }
-
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
@@ -133,7 +125,7 @@
  * Home
  */
 .home-content {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 2;
   max-width: #{$home-content-width};
   width: -webkit-calc(100% - (#{$spacing-unit}));
   width:         calc(100% - (#{$spacing-unit}));
@@ -185,6 +177,10 @@
 /**
  * Posts
  */
+.post img {
+  margin-bottom: $spacing-unit * 2;
+}
+
 .post-header {
   margin-bottom: $spacing-unit;
 }
@@ -225,4 +221,65 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+
+/**
+ * Portfolio
+ */
+.portfolio-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 280vh;
+}
+
+.portfolio-item {
+  margin-bottom: $spacing-unit / 2;
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+  width:         calc(50% - (#{$spacing-unit} / 2));
+
+  a {
+    color: $text-color;
+    display: block;
+  }
+
+  img {
+    -webkit-backface-visibility: hidden; // Fixes weird chrome size flicker bug
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+
+    transition: opacity $link-transition-speed * 2 ease-out;
+    -webkit-transition: opacity $link-transition-speed * 2 ease-out;
+    -moz-transition: opacity $link-transition-speed * 2 ease-out;
+    -o-transition: opacity $link-transition-speed * 2 ease-out;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      opacity: 0.8;
+    }
+
+    .portfolio-img-wrapper {
+      background-color: black;
+    }
+  }
+}
+
+@include media-query($on-laptop) {
+  .portfolio-item {
+    width: 100%;
+  }
+}
+
+.portfolio-img-wrapper {
+  margin-bottom: $spacing-unit / 4;
+  background-color: $grey-color-light;
+
+  transition: background-color $link-transition-speed * 2 ease-out;
+  -webkit-transition: background-color $link-transition-speed * 2 ease-out;
+  -moz-transition: background-color $link-transition-speed * 2 ease-out;
+  -o-transition: background-color $link-transition-speed * 2 ease-out;
 }
