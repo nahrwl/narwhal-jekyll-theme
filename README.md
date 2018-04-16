@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nahrwl/narwhal-jekyll-theme.svg?branch=master)](https://travis-ci.org/nahrwl/narwhal-jekyll-theme)
+
 # narwhal-jekyll-theme
 
 Narwhal is a simple Jekyll theme for a portfolio website. This theme is a fork of [Minima](https://github.com/jekyll/minima), the default Jekyll theme. Much of this Readme is still identical to Minima's, but all sections have been updated to support Narwhal.
