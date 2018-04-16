@@ -3,7 +3,7 @@ layout: home
 ---
 
 <div class="portfolio-grid">
-  {% assign sorted = (site.portfolio | sort: 'importance') | reverse %}
+  {% assign sorted = site.portfolio | sort: 'importance' | reverse %}
   {% for item in sorted %}
       <div class="portfolio-item">
         <a href="{{ item.url }}">
