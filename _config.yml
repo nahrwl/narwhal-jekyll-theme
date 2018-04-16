@@ -48,7 +48,7 @@ narwhal:
 # - about.html
 
 # Build settings
-theme: narwhal-jekyll-theme
+remote_theme: nahrwl/narwhal-jekyll-theme
 
 collections:
   portfolio:
