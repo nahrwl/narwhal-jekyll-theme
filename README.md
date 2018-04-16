@@ -20,6 +20,12 @@ And add this line to your Jekyll site:
 theme: narwhal-jekyll-theme
 ```
 
+To use this theme with GitHub Pages, instead use:
+
+```yaml
+remote_theme: nahrwl/narwhal-jekyll-theme
+```
+
 And then execute:
 
     $ bundle
