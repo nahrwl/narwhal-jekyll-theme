@@ -6,8 +6,8 @@
 
     {%- if page_paths -%}
       <nav class="site-nav">
-        <a class="page-link" href="{{ site.baseurl }}{% link index.md %}">Portfolio</a>
-        <a class="page-link" href="{{ site.baseurl }}{% link posts.md %}">Posts</a>
+        {%- if page_paths contains 'index.md' -%}<a class="page-link" href="{{ site.baseurl }}{% link index.md %}">Portfolio</a>{%- endif -%}
+        {%- if page_paths contains 'posts.md' -%}<a class="page-link" href="{{ site.baseurl }}{% link posts.md %}">Posts</a>{%- endif -%}
       </nav>
     {%- endif -%}
   </div>
