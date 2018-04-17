@@ -7,6 +7,8 @@
 
   #homepage & {
     position: absolute;
+    right: 0;
+    width: auto;
   }
 
   a {
@@ -26,6 +28,7 @@
 
     #homepage & {
       position: relative;
+      right: auto;
     }
   }
 }
